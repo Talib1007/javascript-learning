@@ -1,0 +1,27 @@
+div div{
+    margin:12px;
+    display:inline-block;
+    padding:10px;
+    height:50px;
+    width:50px;
+    border:solid 2px;
+
+}
+
+#grey{
+background-color:grey;
+}
+#aqua{
+background-color:aqua;
+}
+#red{
+background-color:red;
+}
+#blue{
+background-color:blue;
+}
+.open{
+text-align:center;
+margin-top:150px;
+}
+
