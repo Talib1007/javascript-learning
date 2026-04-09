@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event learning
+    </title>
+</head>
+<body style="background-color:black;color:white">
+    <h2>Amazing Images</h2>
+    <div>
+    <ol id="images">
+        <li><img width=200px style="margin-bottom:30px;display:block"  src="https://i.natgeofe.com/k/e924c4a8-cf47-4621-9ef8-20884ad2444f/Pyramids-at-Giza_4x3.png" alt="pyramid" id="pyramid"></li>
+        <li><img width=200px style="margin-bottom:30px;display:block"  src="https://www.travelandleisure.com/thmb/YWJcvFMgCUx2ouWsrGXec8iU8uU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-machu-picchu-WORLDWONDERS0523-f30a1947618b4f109a33355bb5a530ff.jpg" alt="great wall of china" id="great-wall-of-china"></li>
+        <li><img width=200px style="margin-bottom:30px;display:block"  src="https://www.thoughtco.com/thmb/oE-wRfhScZ6xZau3HyQYsPTpJ8Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Christ_the_Redeemer-140514153-56a02f845f9b58eba4af490a.jpg" alt="statue of liberty" id="statue-of-liberty"></li>
+        <li><img width=200px style="margin-bottom:30px;display:block"  src="https://www.cuddlynest.com/blog/wp-content/uploads/2020/06/Wonders-of-the-World-Colosseum-1.jpg" alt="leaning tower of pisa" id="leaning-tower-of-pisa"></li>
+        <li><img width=200px  style="margin-bottom:30px;display:block" src="https://www.thomascook.in/blog//wp-content/uploads/2018/04/taj-mahal-deal_2722393b.jpg" alt="Taj mahal"  id="Taj-mahal"></li>
+        <li><a style="color:rgb(15, 117, 207)" href="https://google.com" id ="google">Google</a></li>
+        <div id="output"></div>
+    </ol>
+    </div>
+</body>
+<script>
+    // document.querySelector('#Taj-mahal').onclick=function (){
+    //     alert('Taj mahal clicked')
+    // } 
+      // attachEvent()
+    // JQuery-onEventListener not addEventListener
+
+    // type,timestamp,defaultprevented
+    // target,toElement,srcElement,currentTarget,
+    // clientX,clientY,screenX,screenY
+    // alt key,ctrl key,shiftkey,keyCode
+
+    const output=document.querySelector('#output')
+    document.querySelector('#Taj-mahal').addEventListener('click',function(e){
+    //    console.log(e.shiftKey)
+    //    const date=new Date().toLocaleTimeString()  
+    //     output.innerHTML=`image clicked at ${date}`
+    },false)
+    document.querySelector('#images').addEventListener('click',function (e){
+        // console.log('ol clicked')
+    },false)
+      document.querySelector('#Taj-mahal').addEventListener('click',function (e){
+        // console.log('li clicked')
+        // e.stopPropagation()
+    },false)
+    document.getElementById('google').addEventListener('click',function(e){
+         e.preventDefault() //to close default behaviour
+// window.location.href = "https://google.com"; to hover directly on link
+    })
+    // removing image by clicking it 
+    document.querySelector('#images').addEventListener('click',function (e){
+        let removeit=e.target.tagName
+       if(removeit==='IMG'){
+         e.target.parentNode.remove()
+       }
+       
+
+    })
+</script>
+</html>

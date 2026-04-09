@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard press
+    </title>
+</head>
+<body>
+    <table style="border:1px;">
+        <tr>
+            <th>key</th>
+            <th>keycode</th>
+            <th>name</th>
+        </tr>
+        <tr>
+             <td id="key"></td>
+        <td id="keycode"></td>
+        <td id="name"></td>
+        </tr>
+       
+    </table>
+    
+</body>
+<script >
+    document.addEventListener('keydown',function (e){
+        document.querySelector('#key').innerHTML=e.key
+        document.querySelector('#keycode').innerHTML=e.keyCode
+        document.querySelector('#name').innerHTML=e.code
+    })
+</script>
+</html>
